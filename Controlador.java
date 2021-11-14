@@ -22,15 +22,15 @@ public class Controlador {
             int tipo = vista.pedirTipoRadio();
 
             if (tipo == 1){
-                radio = new RadioA(); 
+                radio = new Radio_A(); 
             }
 
             if (tipo == 2){
-                radio = new RadioC();
+                radio = new Radio_C();
             }
 
             if (tipo == 3){
-                radio = new RadioS();
+                radio = new Radio_S();
             }
 
             carro = new Carro(radio);
@@ -44,27 +44,31 @@ public class Controlador {
                     opcion = vista.menuOpcionesEndendido();
 
                     if (opcion == 1){ //Apagar el radio
-                        radio.encender(false);
+                        carro.encender(false);
                     }
 
                     if (opcion == 2){
-                        int volumen = vista.pedirVolumen();
-                        carro.Volumen(volumen);
+                        boolean volumen = vista.pedirVolumen();
+                        carro.volumen(volumen);
                     }
 
                     if (opcion == 3){ //Modo Radio
                         int opcionRadio = vista.menuOpcionesRadio();
                         String modoRadio = "";
+                        if (opcionRadio == 1){ //Cambiar de FM a AM
+                            modoRadio = carro.cambiar_fm_am();
+                        }
                         if (opcionRadio == 2){ //Cambiar emisora
                             int emisora = vista.CambiarEmisora();
-                            modoRadio = carro.Radio(opcionRadio, emisora);
+                            modoRadio = carro.radio(opcionRadio, emisora);
                         }
-                        else if (opcionRadio == 4){ //Cargar Emisora
+                        if (opcionRadio == 3){ //Guardar Emisora
+                            int emisora = vista.GuardarEmisora();
+                            modoRadio = carro.radio(opcionRadio, emisora);
+                        }
+                        if (opcionRadio == 4){ //Cargar Emisora
                             int emisora = vista.CargarEmisora();
-                            modoRadio = carro.Radio(opcionRadio, emisora);
-                        }
-                        else{ //Cambiar de FM a AM o Guardar Emisora
-                            modoRadio = carro.Radio(opcionRadio);
+                            modoRadio = carro.radio(opcionRadio, emisora);
                         }
                         vista.mostrar(modoRadio);
                     }
@@ -76,7 +80,7 @@ public class Controlador {
                             carro.lista(lista);
                         }
                         if(opcionReproduccion == 2){ //Cambiar Cancion
-                            int cancion = vista.pedirCambiarCancion();
+                            boolean cancion = vista.pedirCambiarCancion();
                             carro.cambiar(cancion);
                         }
                         if (opcionReproduccion == 3){ //Reproducir canción
@@ -87,13 +91,19 @@ public class Controlador {
 
                     if (opcion == 5){ //Modo Teléfono
                         int opcionTelefono = vista.menuOpcionesTelefono(tipo);
-                        String telefono = carro.telefono(opcionTelefono);
+                        String telefono = "";
+                        if (opcionTelefono == 4){
+                            int contacto = vista.pedirContacto();
+                            telefono = carro.llamar(contacto);
+                        }
+                        else
+                            telefono = carro.telefono(opcionTelefono);
                         vista.mostrar(telefono);
                     }
 
                     if (opcion == 6){ //Modo Productividad
                         String cosa = vista.pedirCosa(tipo);
-                        String productividad = carro.Productividad(tipo, cosa);
+                        String productividad = carro.productividad(cosa);
                         vista.mostrar(productividad);
                     }
                 }
