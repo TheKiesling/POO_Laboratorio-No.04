@@ -10,6 +10,8 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
     protected Cancion cancion;
     protected int ncancion;
     protected String frecuencia;
+    protected boolean telefono;
+    protected boolean llamada;
     public Radio(){
         volumen =0;
         estacion=0.5;
@@ -22,6 +24,8 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         playlists.add(new Playlist("Rock"));
         playlists.add(new Playlist("Clasicas"));
         ncancion=0;
+        telefono = false;
+        llamada = false;
     }
     public String volumen(boolean sb){
         if(sb){
@@ -82,9 +86,40 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         cancion = playlist.getCancion(ncancion);
         return "Se ha seleccionado la playlist: "+playlist.toString();
     }
-
+    public String conectar(){
+        telefono = true;
+        return "Telefono conectado";
+    }
+    public String mostrar_contactos(){
+        if(telefono){
+            String contact="";
+            for(int i=0;i<contactos.size();i++){
+                contact+="("+i+") "+contactos.get(i).toString()+"\n";
+            }
+            return contact;
+        }else{
+            return "No se ha conectado un telefono";
+        }
+    }
+    public String llamar_contacto(int index){
+        if(telefono){
+            llamada = true;
+            return "Llamando a: "+contactos.get(index).toString();
+        }else{
+            return "No se ha conectado un telefono";
+        }
+    }
+    public String finalizar_llamada(){
+        if(llamada){
+            llamada=false;
+            return "Llamada finalizada";
+        }else{
+            return "No hay una llamada activa";
+        }
+    }
     public abstract String modo_telefono();
 
     public abstract String modo_productividad(String cosa);
 
+    
 }
