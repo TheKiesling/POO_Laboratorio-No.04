@@ -83,4 +83,8 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         return "Se ha seleccionado la playlist: "+playlist.toString();
     }
 
+    public abstract String modo_telefono();
+
+    public abstract String modo_productividad(String cosa);
+
 }
