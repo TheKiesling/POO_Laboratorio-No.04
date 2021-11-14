@@ -24,4 +24,7 @@ public class Playlist {
     public String toString(){
         return nombre;
     }
+    public Cancion getCancion(int index){
+        return canciones.get(index);
+    }
 }

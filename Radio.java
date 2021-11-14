@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproduccion,Modo_telefono{
+public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproduccion,Modo_telefono, Telefono_productividad{
     protected int volumen;
     protected double estacion;
     protected double[] estaciones;
@@ -8,6 +8,7 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
     protected ArrayList<Playlist> playlists;
     protected Playlist playlist;
     protected Cancion cancion;
+    protected int ncancion;
     protected String frecuencia;
     public Radio(){
         volumen =0;
@@ -20,6 +21,7 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         playlists.add(new Playlist("Rancheras"));
         playlists.add(new Playlist("Rock"));
         playlists.add(new Playlist("Clasicas"));
+        ncancion=0;
     }
     public String volumen(boolean sb){
         if(sb){
@@ -52,13 +54,32 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         return "La estacion "+estacion+" ha sido cargada";
     }
     public String cambiar(boolean sb){
-
+        if(playlist!=null){
+            if(sb){
+                if(ncancion<3)
+                    ncancion++;
+                    cancion = playlist.getCancion(ncancion);
+            }else{
+                if(ncancion>0)
+                    ncancion --;
+                    cancion = playlist.getCancion(ncancion);
+            }
+            return "Se ha seleccionado la cancion: "+cancion.toString();
+        }else{
+            return "No se ha seleccionado una playlist";
+        }
     }
     public String escuchar(){
-
+        if(cancion !=null){
+            return "Se ha iniciado la cancion "+cancion.toString();
+        }else{
+            return "No se ha seleccionado una cancion";
+        }
     }
     public String seleccionar(int index){
         playlist=playlists.get(index);
+        ncancion=0;
+        cancion = playlist.getCancion(ncancion);
         return "Se ha seleccionado la playlist: "+playlist.toString();
     }
 
