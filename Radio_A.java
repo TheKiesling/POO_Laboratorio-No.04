@@ -18,7 +18,7 @@ public class Radio_A extends Radio{
     }
 
     public String modo_productividad(String cosa){
-        return "Se ha activado el modo productividad." + cosa;
+        return "Tarjeta de presentacion de: " + cosa;
     }
 
     public String Llamar_ultimo_contacto(){
