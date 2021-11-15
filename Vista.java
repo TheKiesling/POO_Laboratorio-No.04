@@ -12,11 +12,12 @@ import java.util.InputMismatchException;
  */
 
 public class Vista {
-    //-----PROPIEDADES-----
+    //---------------------------PROPIEDADES-------------------------
     Scanner scan = new Scanner(System.in);
 
-    //-----METODOS-----
-    /** 
+    //---------------------------MÉTODOS-----------------------------
+    
+    /**************************************************************** 
      * Metodo que muestra el menu principal, además lee y devuelve la opción del usuario.
      * @return int op, seleccionada por el usuario (1-7)
      */
@@ -53,10 +54,11 @@ public class Vista {
         }
         return op;
     }
+    //***************************************************************
     
     /** 
      * Metodo que muestra el menu del Modo Radio, además lee y devuelve la opción del usuario.
-     * @return int op, seleccionada por el usuario (1-4)
+     * @return int op, seleccionada por el usuario (1-3)
      */
     public int mostrarMenuRadio() throws Exception, InputMismatchException{
         int op = 0;
@@ -87,6 +89,7 @@ public class Vista {
         }
         return op;
     }
+    //***************************************************************
 
     /** 
      * Metodo que muestra el menu del Modo Radio, además lee y devuelve la opción del usuario.
@@ -122,7 +125,7 @@ public class Vista {
         }
         return op;
     }
-
+    //***************************************************************
 
     /** 
      * Metodo que muestra el menu del Modo Reproduccion, además lee y devuelve la opción del usuario.
@@ -157,6 +160,7 @@ public class Vista {
         }
         return op;
     }
+    //***************************************************************
 
     /** 
      * Metodo que muestra el menu del Modo Telefono, además lee y devuelve la opción del usuario.
@@ -201,7 +205,12 @@ public class Vista {
         }
         return op;
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que muestra el menu del Modo Apagado, además lee y devuelve la opción del usuario.
+     * @return int op, seleccionada por el usuario (1-2)
+     */
     public int mostrarMenuApagado() throws Exception, InputMismatchException{
         int op = 0;
         boolean verificacion = false;
@@ -230,6 +239,7 @@ public class Vista {
         }
         return op;
     }
+    //***************************************************************
 
     /** 
      * Metodo que imprime la bienvenida.
@@ -237,7 +247,13 @@ public class Vista {
     public void bienvenida(){
         System.out.println("\n - Bienvenido a su asistente de radio Mercedes-Benz -\n\n");
     }
+    //***************************************************************
 
+    /**
+     * Metodo para solicitar el dato relacionado a la productividad
+     * @param int tipo de radio
+     * @return String cosa
+     */
     public String pedirCosa(int tipo) throws Exception{
         String cosa = "";
         boolean verificacion = false;
@@ -265,6 +281,7 @@ public class Vista {
         }
         return cosa;
     }
+    //***************************************************************
 
     /** 
      * Metodo que indica que el ingreso de opcion no es válido.
@@ -272,6 +289,7 @@ public class Vista {
     public void ingresoIncorrecto(){
         System.out.println("\n%% Opcion invalida, intentelo otra vez. %%");
     }
+    //***************************************************************
 
     /** 
      * Metodo que indica un error.
@@ -279,6 +297,7 @@ public class Vista {
     public void error(String s){
         System.out.println(s);
     }
+    //***************************************************************
 
     /** 
      * Metodo que muestra un texto.
@@ -286,7 +305,12 @@ public class Vista {
     public void mostrar(String s){
         System.out.println(s);
     }
+    //***************************************************************
 
+    /**
+     * Metodo para solicitar el dato relacionado al cambio de emisora (avanza/disminuye)
+     * @return int op
+     */
     public int CambiarEmisora() throws Exception, InputMismatchException{
         int op = -1;
         int emisora = 0;
@@ -325,7 +349,12 @@ public class Vista {
         }
         return emisora;
     }
+    //***************************************************************
 
+    /**
+     * Metodo para solicitar la posicion donde va a guardar la estacion
+     * @return int emisora
+     */
     public int GuardarEmisora() throws Exception, InputMismatchException{
         int emisora = -1;
         boolean verificacion = false;
@@ -351,7 +380,12 @@ public class Vista {
         }
         return emisora;
     }
+    //***************************************************************
 
+    /**
+     * Metodo para solicitar la posicion donde va a guardar la estacion
+     * @return int emisora
+     */
     public int CargarEmisora() throws Exception, InputMismatchException{
         int emisora = -1;
         boolean verificacion = false;
@@ -377,9 +411,11 @@ public class Vista {
         }
         return emisora;
     }
+    //***************************************************************
 
     /** 
-     * Metodo que pide el cambio de volumen.
+     * Metodo que pide el cambio de volumen (aumentar/disminuir).
+     * @return boolean cambio
      */
     public boolean pedirVolumen() throws Exception, InputMismatchException{
         boolean cambio = false;
@@ -417,6 +453,7 @@ public class Vista {
         }
         return cambio;
     }
+    //***************************************************************
 
     /** 
      * Metodo que imprime la despedida.
@@ -424,7 +461,12 @@ public class Vista {
     public void despedida(){
         System.out.println("\n\nSe ha desactivado el asistente de radio Mercedes-Benz, que tenga un buen dia.\n");
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que pide el cambio de estado de la radio (encender/apagar).
+     * @return boolean estado
+     */
     public boolean encenderYapagar(boolean estadoA){
         boolean estado = false;
 
@@ -456,7 +498,12 @@ public class Vista {
         }
         return estado;
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que pide el cambio de cancion.
+     * @return boolean cambio
+     */
     public boolean pedirCambiarCancion(){
         boolean cambio = false;
 
@@ -474,7 +521,12 @@ public class Vista {
 
         return cambio;
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que pide el id de un contacto.
+     * @return int id
+     */
     public int pedirContacto() throws Exception, InputMismatchException{
         int id = -1;
         boolean verificacion = false;
@@ -500,7 +552,11 @@ public class Vista {
         }
         return id;
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que muestra todos los contactos registrados.
+     */
     public void mostrarContactos(String[] contactos){
 
         for(int i=0; i<contactos.length; i++){
@@ -508,7 +564,12 @@ public class Vista {
             System.out.println(i+". "+contacto);
         }
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que solicita el destino del viaje.
+     * @return String destino
+     */
     public String pedirDestino() throws Exception{
         String destino = "";
         boolean verificacion = false;
@@ -531,7 +592,12 @@ public class Vista {
         }
         return destino;
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que solicita la cancion a reproducir.
+     * @return String cancion
+     */
     public String pedirCancion() throws Exception{
         String cancion = "";
         boolean verificacion = false;
@@ -554,7 +620,12 @@ public class Vista {
         }
         return cancion;
     }
+    //***************************************************************
 
+    /** 
+     * Metodo que solicita la playlist a reproducir.
+     * @return int id de playlist
+     */
     public int pedirLista() throws Exception, InputMismatchException{
         int id = -1;
         boolean verificacion = false;
@@ -580,4 +651,5 @@ public class Vista {
         }
         return id;
     }
+    //***************************************************************
 }
