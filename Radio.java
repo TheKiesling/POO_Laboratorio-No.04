@@ -23,6 +23,10 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         playlists.add(new Playlist("Rancheras"));
         playlists.add(new Playlist("Rock"));
         playlists.add(new Playlist("Clasicas"));
+        contactos.add(new Contacto("Mama", "12345678"));
+        contactos.add(new Contacto("Papa", "87654321"));
+        contactos.add(new Contacto("Novia1", "14725836"));
+        contactos.add(new Contacto("Novia2", "14725839"));
         ncancion=0;
         telefono = false;
         llamada = false;
