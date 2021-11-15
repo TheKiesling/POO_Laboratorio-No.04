@@ -67,15 +67,14 @@ public class Vista {
             System.out.println("Opcion 1: Radio A");
             System.out.println("Opcion 2: Radio B");
             System.out.println("Opcion 3: Radio C");
-            System.out.println("Opcion 4: Salir\n");
-            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-4)");
+            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-3)");
             
             while(verificacion == false){
                 op = Integer.parseInt(scan.nextLine());
-                if(op < 5 && op >= 1){
+                if(op < 4 && op >= 1){
                     verificacion = true;
                 }else{
-                    System.out.println("% Ingrese una opcion valida (1-4) %");
+                    System.out.println("% Ingrese una opcion valida (1-3) %");
                 }
             }
             //En caso de ingreso invalido
@@ -102,15 +101,14 @@ public class Vista {
             System.out.println("Opcion 1: Seleccionar lista de reproduccion");
             System.out.println("Opcion 2: Cambiar cancion");
             System.out.println("Opcion 3: Escuchar cancion");
-            System.out.println("Opcion 4: Salir del Modo Reproduccion\n");
-            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-4)");
+            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-3)");
             
             while(verificacion == false){
                 op = Integer.parseInt(scan.nextLine());
-                if(op < 5 && op >= 1){
+                if(op < 4 && op >= 1){
                     verificacion = true;
                 }else{
-                    System.out.println("% Ingrese una opcion valida (1-4) %");
+                    System.out.println("% Ingrese una opcion valida (1-3) %");
                 }
             }
             //En caso de ingreso invalido
@@ -141,23 +139,20 @@ public class Vista {
             
             if(TipoRadio==1){
                 System.out.println("Opcion 5: Cambiar bocinas o auriculares");
-                System.out.println("Opcion 6: Salir\n");
             }else if(TipoRadio==2){
                 System.out.println("Opcion 5: Llamar al ultimo contacto");
-                System.out.println("Opcion 6: Salir\n");
             }else if(TipoRadio==3){
                 System.out.println("Opcion 5: Cambiar a llamada en espera");
-                System.out.println("Opcion 6: Salir\n");
             }
             
-            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-4)");
+            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-5)");
             
             while(verificacion == false){
                 op = Integer.parseInt(scan.nextLine());
-                if(op < 5 && op >= 1){
+                if(op < 6 && op >= 1){
                     verificacion = true;
                 }else{
-                    System.out.println("% Ingrese una opcion valida (1-6) %");
+                    System.out.println("% Ingrese una opcion valida (1-5) %");
                 }
             }
             //En caso de ingreso invalido
