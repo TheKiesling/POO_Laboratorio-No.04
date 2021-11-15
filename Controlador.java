@@ -19,7 +19,7 @@ public class Controlador {
             //Saludar al usuario
             vista.bienvenida();
 
-            int tipo = vista.pedirTipoRadio();
+            int tipo = vista.mostrarMenuRadio();
 
             if (tipo == 1){
                 radio = new Radio_A(); 
@@ -41,7 +41,7 @@ public class Controlador {
             if (encendido){
                 while (opcion != 7){
                     //Despliegue de las opciones del menú y su previa lectura de dicha opción
-                    opcion = vista.menuOpcionesEndendido();
+                    opcion = vista.mostrarMenu();
 
                     if (opcion == 1){ //Apagar el radio
                         carro.encender(false);
@@ -53,7 +53,7 @@ public class Controlador {
                     }
 
                     if (opcion == 3){ //Modo Radio
-                        int opcionRadio = vista.menuOpcionesRadio();
+                        int opcionRadio = vista.mostrarMenuRadio();
                         String modoRadio = "";
                         if (opcionRadio == 1){ //Cambiar de FM a AM
                             modoRadio = carro.cambiar_fm_am();

@@ -27,6 +27,15 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
         telefono = false;
         llamada = false;
     }
+    
+    public String encender(){
+        return "La radio ha sido encendida.";
+    }
+
+    public String apagar(){
+        return "La radio ha sido apagada.";
+    }
+    
     public String volumen(boolean sb){
         if(sb){
             if(volumen<100)
