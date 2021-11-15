@@ -51,11 +51,12 @@ public class Controlador {
 
                         if (opcion == 2){
                             boolean volumen = vista.pedirVolumen();
-                            carro.volumen(volumen);
+                            String volumenRadio = carro.volumen(volumen);
+                            vista.mostrar(volumenRadio);
                         }
 
                         if (opcion == 3){ //Modo Radio
-                            int opcionRadio = vista.mostrarMenuRadio();
+                            int opcionRadio = vista.mostrarMenuModoRadio();
                             String modoRadio = "";
                             if (opcionRadio == 1){ //Cambiar de FM a AM
                                 modoRadio = carro.cambiar_fm_am();
