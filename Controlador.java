@@ -74,9 +74,9 @@ public class Controlador {
                     }
 
                     if (opcion == 4){ //Modo Reproduccion
-                        int opcionReproduccion = vista.menuOpcionesReproduccion();
+                        int opcionReproduccion = vista.mostrarMenuReproduccion();
                         if (opcionReproduccion == 1){ //Seleccionar Playlist
-                            int lista = vista.pedirListaReproduccion();
+                            int lista = vista.pedirLista();
                             carro.lista(lista);
                         }
                         if(opcionReproduccion == 2){ //Cambiar Cancion
@@ -90,7 +90,7 @@ public class Controlador {
                     }
 
                     if (opcion == 5){ //Modo Teléfono
-                        int opcionTelefono = vista.menuOpcionesTelefono(tipo);
+                        int opcionTelefono = vista.mostrarMenuTelfono(tipo);
                         String telefono = "";
                         if (opcionTelefono == 4){
                             int contacto = vista.pedirContacto();
@@ -110,7 +110,7 @@ public class Controlador {
             }
             else{
                 while (opcion != 2){
-                    opcion = vista.menuOpcionesApagado();
+                    opcion = vista.mostrarMenuApagado();
 
                     if (opcion == 1){ //Encender el radio
                         carro.encender(true);

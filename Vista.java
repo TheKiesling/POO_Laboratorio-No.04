@@ -171,11 +171,63 @@ public class Vista {
         return op;
     }
 
+    public int mostrarMenuApagado() throws Exception, InputMismatchException{
+        int op = 0;
+        boolean verificacion = false;
+
+        try{
+            System.out.println("\n\n\n--------------------Menu--------------------");
+            System.out.println("Opcion 1: Encender la radio");
+            System.out.println("Opcion 2: Salir\n");
+            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-2)");
+            
+            while(verificacion == false){
+                op = Integer.parseInt(scan.nextLine());
+                if(op < 3 && op >= 1){
+                    verificacion = true;
+                }else{
+                    System.out.println("% Ingrese una opcion valida (1-2) %");
+                }
+            }
+            //En caso de ingreso invalido
+        }catch(InputMismatchException e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new InputMismatchException(s);
+        }catch(Exception e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new Exception(s);
+        }
+        return op;
+    }
+
     /** 
      * Metodo que imprime la bienvenida.
      */
     public void bienvenida(){
         System.out.println("\n - Bienvenido a su asistente de radio Mercedes-Benz -\n\n");
+    }
+
+    public String pedirCosa(int tipo) throws Exception{
+        String cosa = "";
+        boolean verificacion = false;
+
+        try{
+            while(verificacion == false){
+                System.out.println("Ingrese la opcion de productividad del tipo ["+tipo+"] :");
+                cosa = scan.nextLine();
+                if(cosa.equals("")){
+                    verificacion = false;
+                    System.out.println("% Ingrese una cosa valida %");
+                }else{
+                    verificacion = true;
+                }
+            }
+            //En caso de ingreso invalido
+        }catch (Exception e){
+            String s = "Ocurrio un error en el ingreso de destino "+ e.toString();
+            throw new Exception(s);
+        }
+        return cosa;
     }
 
     /** 
@@ -197,6 +249,84 @@ public class Vista {
      */
     public void mostrar(String s){
         System.out.println(s);
+    }
+
+    public int CambiarEmisora() throws Exception, InputMismatchException{
+        int emisora = -1;
+        boolean verificacion = false;
+
+        try{
+            System.out.println("Ingrese la emisora que desea cambiar:");
+            
+            while(verificacion == false){
+                emisora = Integer.parseInt(scan.nextLine());
+                if(emisora != -1){
+                    verificacion = true;
+                }else{
+                    System.out.println("% Ingrese una emisora valida %");
+                }
+            }
+            //En caso de ingreso invalido
+        }catch(InputMismatchException e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new InputMismatchException(s);
+        }catch(Exception e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new Exception(s);
+        }
+        return emisora;
+    }
+
+    public int GuardarEmisora() throws Exception, InputMismatchException{
+        int emisora = -1;
+        boolean verificacion = false;
+
+        try{
+            System.out.println("Ingrese la emisora que desea guardar:");
+            
+            while(verificacion == false){
+                emisora = Integer.parseInt(scan.nextLine());
+                if(emisora != -1){
+                    verificacion = true;
+                }else{
+                    System.out.println("% Ingrese una emisora valida %");
+                }
+            }
+            //En caso de ingreso invalido
+        }catch(InputMismatchException e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new InputMismatchException(s);
+        }catch(Exception e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new Exception(s);
+        }
+        return emisora;
+    }
+
+    public int CargarEmisora() throws Exception, InputMismatchException{
+        int emisora = -1;
+        boolean verificacion = false;
+
+        try{
+            System.out.println("Ingrese la emisora que desea cargar:");
+            
+            while(verificacion == false){
+                emisora = Integer.parseInt(scan.nextLine());
+                if(emisora != -1){
+                    verificacion = true;
+                }else{
+                    System.out.println("% Ingrese una emisora valida %");
+                }
+            }
+            //En caso de ingreso invalido
+        }catch(InputMismatchException e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new InputMismatchException(s);
+        }catch(Exception e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new Exception(s);
+        }
+        return emisora;
     }
 
     /** 
@@ -278,10 +408,10 @@ public class Vista {
         return estado;
     }
 
-    public boolean cambiar(String cosa){
+    public boolean pedirCambiarCancion(){
         boolean cambio = false;
 
-        System.out.println("¿Desea cambiar de "+cosa+"? (si/no)");
+        System.out.println("¿Desea cambiar de cancion? (si/no)");
         String resp = scan.nextLine();
     
         //Validacion de entrada si o no
