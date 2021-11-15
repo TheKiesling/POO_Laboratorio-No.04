@@ -18,7 +18,7 @@ public class Vista {
     //-----METODOS-----
     /** 
      * Metodo que muestra el menu principal, además lee y devuelve la opción del usuario.
-     * @return int op, seleccionada por el usuario (1-8)
+     * @return int op, seleccionada por el usuario (1-7)
      */
     public int mostrarMenu() throws Exception, InputMismatchException{
         int op = 0;
@@ -33,14 +33,14 @@ public class Vista {
             System.out.println("Opcion 5: Modo Telefono");
             System.out.println("Opcion 6: Modo Productividad");
             System.out.println("Opcion 7: Salir\n");
-            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-4)");
+            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-7)");
             
             while(verificacion == false){
                 op = Integer.parseInt(scan.nextLine());
-                if(op < 5 && op >= 1){
+                if(op < 8 && op >= 1){
                     verificacion = true;
                 }else{
-                    System.out.println("% Ingrese una opcion valida (1-8) %");
+                    System.out.println("% Ingrese una opcion valida (1-7) %");
                 }
             }
             //En caso de ingreso invalido
@@ -63,7 +63,7 @@ public class Vista {
         boolean verificacion = false;
 
         try{
-            System.out.println("\n\n\n--------------------Menu Radio--------------------");
+            System.out.println("\n\n\n--------------------Menu Eleccion Radio--------------------");
             System.out.println("Opcion 1: Radio A");
             System.out.println("Opcion 2: Radio C");
             System.out.println("Opcion 3: Radio S");
@@ -87,6 +87,42 @@ public class Vista {
         }
         return op;
     }
+
+    /** 
+     * Metodo que muestra el menu del Modo Radio, además lee y devuelve la opción del usuario.
+     * @return int op, seleccionada por el usuario (1-4)
+     */
+    public int mostrarMenuModoRadio() throws Exception, InputMismatchException{
+        int op = 0;
+        boolean verificacion = false;
+
+        try{
+            System.out.println("\n\n\n--------------------Menu Radio--------------------");
+            System.out.println("Opcion 1: Cambiar de FM a AM");
+            System.out.println("Opcion 2: Cambiar emisora");
+            System.out.println("Opcion 3: Guardar emisora");
+            System.out.println("Opcion 4: Cargar emisora");
+            System.out.println("->Elija una opcion ingresando el numero que la identifica (1-4)");
+            
+            while(verificacion == false){
+                op = Integer.parseInt(scan.nextLine());
+                if(op < 5 && op >= 1){
+                    verificacion = true;
+                }else{
+                    System.out.println("% Ingrese una opcion valida (1-4) %");
+                }
+            }
+            //En caso de ingreso invalido
+        }catch(InputMismatchException e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new InputMismatchException(s);
+        }catch(Exception e){
+            String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
+            throw new Exception(s);
+        }
+        return op;
+    }
+
 
     /** 
      * Metodo que muestra el menu del Modo Reproduccion, además lee y devuelve la opción del usuario.
@@ -252,19 +288,25 @@ public class Vista {
     }
 
     public int CambiarEmisora() throws Exception, InputMismatchException{
-        int emisora = -1;
+        int op = -1;
         boolean verificacion = false;
 
         try{
-            System.out.println("Ingrese la emisora que desea cambiar:");
+            System.out.println("Ingrese la opcion de cambio de emisora:");
+            System.out.println("Opcion 1: Avanzar 0.5");
+            System.out.println("Opcion 2: Retroceder 0.5\n");
             
             while(verificacion == false){
-                emisora = Integer.parseInt(scan.nextLine());
-                if(emisora != -1){
-                    verificacion = true;
-                }else{
-                    System.out.println("% Ingrese una emisora valida %");
-                }
+                System.out.println("->Elija una opcion ingresando el numero que la identifica (1-2)");
+            
+                while(verificacion == false){
+                    op = Integer.parseInt(scan.nextLine());
+                    if(op < 3 && op >= 1){
+                        verificacion = true;
+                    }else{
+                        System.out.println("% Ingrese una opcion valida (1-2) %");
+                    }
+            }
             }
             //En caso de ingreso invalido
         }catch(InputMismatchException e){
@@ -274,7 +316,7 @@ public class Vista {
             String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
             throw new Exception(s);
         }
-        return emisora;
+        return op;
     }
 
     public int GuardarEmisora() throws Exception, InputMismatchException{
@@ -347,11 +389,11 @@ public class Vista {
                 op = Integer.parseInt(scan.nextLine());
                 if(op==1){
                     cambio = true;
-                    System.out.println("\nEl volumen ha aumentado 1\n");;
+                    System.out.println("\nEl volumen ha aumentado 1\n");
                     verificacion = true;
                 }else if(op==2){
                     cambio = false;
-                    System.out.println("\nEl volumen ha disminuido 1\n");;
+                    System.out.println("\nEl volumen ha disminuido 1\n");
                     verificacion = true;
                 }else{
                     System.out.println("\n% Ingrese una opcion valida (1-2) %\n");
