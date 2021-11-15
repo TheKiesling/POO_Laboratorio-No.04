@@ -40,10 +40,16 @@ public class Carro {
      */
     public String encender(boolean encender){
         String encenderApagar ="";
-        if (encender)
+        if (encender){
             encenderApagar = radio.encender();
-        else
+            encendido = true;
+            encenderApagar = "Se ha encendido el radio";
+        }
+        else{
             encenderApagar = radio.apagar();
+            encendido = false;
+            encenderApagar = "Se ha apagado el radio";
+        }
         return encenderApagar;
     }
     //***************************************************************

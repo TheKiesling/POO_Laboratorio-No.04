@@ -26,7 +26,7 @@ public class Vista {
 
         try{
             System.out.println("\n\n\n--------------------Menu--------------------");
-            System.out.println("Opcion 1: Encender/Apagar");
+            System.out.println("Opcion 1: Apagar");
             System.out.println("Opcion 2: Cambiar volumen");
             System.out.println("Opcion 3: Modo Radio");
             System.out.println("Opcion 4: Modo Reproduccion");
