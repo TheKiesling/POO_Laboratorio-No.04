@@ -213,11 +213,16 @@ public class Vista {
 
         try{
             while(verificacion == false){
-                System.out.println("Ingrese la opcion de productividad del tipo ["+tipo+"] :");
+                if(tipo == 1)
+                    System.out.println("Ingrese el lugar a donde quiere viajar :");
+                if (tipo == 2)
+                    System.out.println("Ingrese su nombre para la tarjeta de presentacion :");
+                if (tipo == 3)
+                    System.out.println("Ingrese el dia para ver el clima :");
                 cosa = scan.nextLine();
                 if(cosa.equals("")){
                     verificacion = false;
-                    System.out.println("% Ingrese una cosa valida %");
+                    System.out.println("% Ingrese un texto valida %");
                 }else{
                     verificacion = true;
                 }
