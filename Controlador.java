@@ -101,7 +101,7 @@ public class Controlador {
                                 telefono = carro.llamar(contacto);
                             }
                             else
-                                telefono = carro.telefono(opcionTelefono);
+                            telefono = carro.telefono(opcionTelefono);
                             vista.mostrar(telefono);
                         }
 

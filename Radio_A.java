@@ -14,7 +14,8 @@
 public class Radio_A extends Radio{
    
     public String modo_telefono(){
-        return "\nSe esta llamando al ultimo contacto";
+
+        return "\nSe esta llamando al ultimo contacto: " + ultimoContacto;
     }
 
     public String modo_productividad(String cosa){

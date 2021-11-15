@@ -25,6 +25,7 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
     protected String frecuencia;
     protected boolean telefono;
     protected boolean llamada;
+    protected Contacto ultimoContacto;
     public Radio(){
         volumen =0;
         estacion=0.5;
@@ -130,6 +131,7 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
     public String llamar_contacto(int index){
         if(telefono){
             llamada = true;
+            ultimoContacto = contactos.get(index);
             return "Llamando a: "+contactos.get(index).toString();
         }else{
             return "No se ha conectado un telefono";
