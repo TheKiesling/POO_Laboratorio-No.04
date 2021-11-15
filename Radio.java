@@ -143,6 +143,13 @@ public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproducci
             return "No hay una llamada activa";
         }
     }
+    public String getPlaylists(){
+        String str_playlist="";
+        for(int i=0;i<playlists.size();i++){
+            str_playlist+="("+i+")  "+playlists.get(i).toString()+"\n";
+        }   
+        return str_playlist;
+    }
     public abstract String modo_telefono();
 
     public abstract String modo_productividad(String cosa);
