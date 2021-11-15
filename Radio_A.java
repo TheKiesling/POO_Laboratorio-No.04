@@ -14,18 +14,10 @@
 public class Radio_A extends Radio{
    
     public String modo_telefono(){
-        return "Se ha activado el modo telefono.";
+        return "\nSe esta llamando al ultimo contacto";
     }
 
     public String modo_productividad(String cosa){
-        return "Tarjeta de presentacion de: " + cosa;
-    }
-
-    public String Llamar_ultimo_contacto(){
-        return "Se esta llamando al ultimo contacto";
-    }
-
-    public String Ver_tarjeta_presentacion(String nombre){
-        return nombre;
+        return "\nTarjeta de presentacion de: " + cosa;
     }
 }

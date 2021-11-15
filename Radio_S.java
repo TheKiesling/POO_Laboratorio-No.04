@@ -14,16 +14,12 @@
 public class Radio_S extends Radio{
     
     public String modo_telefono(){
-        return "Se ha activado el modo telefono.";
+        return "\nSe ha cambiado de bocinas a auriculares.";
     }
 
     public String modo_productividad(String cosa){
-        String msg = "Se ha planificado el viaje hacia "+cosa+".";
+        String msg = "\nSe ha planificado el viaje hacia "+cosa+".";
         return msg;
-    }
-
-    public String Cambiar_bocinas_auriculares(){
-        return "Se ha cambiado de bocinas a auriculares.";
     }
 
 }
