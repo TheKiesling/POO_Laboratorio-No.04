@@ -253,14 +253,14 @@ public class Vista {
                 cosa = scan.nextLine();
                 if(cosa.equals("")){
                     verificacion = false;
-                    System.out.println("% Ingrese un texto valida %");
+                    System.out.println("% Ingrese una opcion valida %");
                 }else{
                     verificacion = true;
                 }
             }
             //En caso de ingreso invalido
         }catch (Exception e){
-            String s = "Ocurrio un error en el ingreso de destino "+ e.toString();
+            String s = "Ocurrio un error en el ingreso de objeto de productividad "+ e.toString();
             throw new Exception(s);
         }
         return cosa;
@@ -335,10 +335,10 @@ public class Vista {
             
             while(verificacion == false){
                 emisora = Integer.parseInt(scan.nextLine());
-                if(emisora != -1){
+                if(emisora >= 1 && emisora < 51){
                     verificacion = true;
                 }else{
-                    System.out.println("% Ingrese una emisora valida %");
+                    System.out.println("% Ingrese una posicion de emisora valida %");
                 }
             }
             //En caso de ingreso invalido
@@ -357,14 +357,14 @@ public class Vista {
         boolean verificacion = false;
 
         try{
-            System.out.println("Ingrese la emisora que desea cargar:");
+            System.out.println("Ingrese la posicion de la estacion que desea cargar:");
             
             while(verificacion == false){
                 emisora = Integer.parseInt(scan.nextLine());
-                if(emisora != -1){
+                if(emisora >= 1 && emisora < 51){
                     verificacion = true;
                 }else{
-                    System.out.println("% Ingrese una emisora valida %");
+                    System.out.println("% Ingrese una posicion de emisora valida %");
                 }
             }
             //En caso de ingreso invalido
