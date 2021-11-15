@@ -12,5 +12,10 @@
  */
 
 public interface Radio_basica {
+
+    /****************************************************************
+     * volumen: instancia el la funcion del volumen en la radio
+     */
     public String volumen(boolean sb);
+    //***************************************************************
 }

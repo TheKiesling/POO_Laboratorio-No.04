@@ -19,28 +19,29 @@ public class Controlador {
             //Saludar al usuario
             vista.bienvenida();
 
+            //Mostrar el Radio que se va a crear
             int tipo = vista.mostrarMenuRadio();
 
-            if (tipo == 1){
+            if (tipo == 1){ //Radio A
                 radio = new Radio_A(); 
             }
 
-            if (tipo == 2){
+            if (tipo == 2){ //Radio C
                 radio = new Radio_C();
             }
 
-            if (tipo == 3){
+            if (tipo == 3){ //Radio S
                 radio = new Radio_S();
             }
 
-            carro = new Carro(radio);
+            carro = new Carro(radio); //Instancia de carro
 
             int opcion = -1;
 
             boolean bandera = true;
-            while(bandera){
+            while(bandera){ //Mientras no salga
                 boolean encendido = carro.getEncendido();
-                    while (opcion != 7 && encendido == true){
+                    while (opcion != 7 && encendido == true){ //Mientras esté encendido
                         //Despliegue de las opciones del menú y su previa lectura de dicha opción
                         opcion = vista.mostrarMenu();
 
@@ -49,7 +50,7 @@ public class Controlador {
                             encendido = false;
                         }
 
-                        if (opcion == 2){
+                        if (opcion == 2){ //Cambiar Volumen
                             boolean volumen = vista.pedirVolumen();
                             String volumenRadio = carro.volumen(volumen);
                             vista.mostrar(volumenRadio);
@@ -111,7 +112,7 @@ public class Controlador {
                             vista.mostrar(productividad);
                         }
 
-                        if (opcion == 7){
+                        if (opcion == 7){ //Salir
                             vista.despedida();
                             bandera = false;
                         }

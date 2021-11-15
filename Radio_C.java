@@ -12,13 +12,23 @@
  */
 
 public class Radio_C extends Radio{
+
+    //---------------------------MÉTODOS-----------------------------
     
+    /****************************************************************
+     * modo_telefono: realiza la funcion especifica del modo telefono
+     */
     public String modo_telefono(){
         return "\nSe ha puesto la llamada en espera";
     }
+    //***************************************************************
 
+    /****************************************************************
+     * modo_productividad: realiza la funcion especifica del modo productividad
+     */
     public String modo_productividad(String cosa){
         String msg = "\nEl pronostico del dia de hoy "+"["+cosa+"]"+" es: \nSoleado";
         return msg;
     }
+    //***************************************************************
 }

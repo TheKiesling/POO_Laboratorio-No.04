@@ -13,12 +13,21 @@
 
 public class Radio_A extends Radio{
    
-    public String modo_telefono(){
+    //---------------------------MÉTODOS-----------------------------
 
+    /****************************************************************
+     * modo_telefono: realiza la funcion especifica del modo telefono
+     */
+    public String modo_telefono(){
         return "\nSe esta llamando al ultimo contacto: " + ultimoContacto;
     }
+    //***************************************************************
 
+    /****************************************************************
+     * modo_productividad: realiza la funcion especifica del modo productividad
+     */
     public String modo_productividad(String cosa){
         return "\nTarjeta de presentacion de: " + cosa;
     }
+    //***************************************************************
 }

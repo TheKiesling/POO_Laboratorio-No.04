@@ -12,14 +12,24 @@
  */
 
 public class Radio_S extends Radio{
+
+    //---------------------------MÉTODOS-----------------------------
     
+    /****************************************************************
+     * modo_telefono: realiza la funcion especifica del modo telefono
+     */
     public String modo_telefono(){
         return "\nSe ha cambiado de bocinas a auriculares.";
     }
+    //***************************************************************
 
+    /****************************************************************
+     * modo_productividad: realiza la funcion especifica del modo productividad
+     */
     public String modo_productividad(String cosa){
         String msg = "\nSe ha planificado el viaje hacia "+cosa+".";
         return msg;
     }
+    //***************************************************************
 
 }
