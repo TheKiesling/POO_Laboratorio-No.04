@@ -65,8 +65,8 @@ public class Vista {
         try{
             System.out.println("\n\n\n--------------------Menu Radio--------------------");
             System.out.println("Opcion 1: Radio A");
-            System.out.println("Opcion 2: Radio B");
-            System.out.println("Opcion 3: Radio C");
+            System.out.println("Opcion 2: Radio C");
+            System.out.println("Opcion 3: Radio S");
             System.out.println("->Elija una opcion ingresando el numero que la identifica (1-3)");
             
             while(verificacion == false){
