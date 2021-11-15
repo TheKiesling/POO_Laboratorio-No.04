@@ -17,6 +17,7 @@ public class Playlist {
     String nombre;
     ArrayList<Cancion> canciones;
     public Playlist(String nombre){
+        canciones = new ArrayList<Cancion>();
         this.nombre=nombre;
         if(nombre.equals("Reggaeton")){
             canciones.add(new Cancion("Si tu supieras", "Feid", "3:16"));
