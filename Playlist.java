@@ -14,8 +14,15 @@ import java.util.ArrayList;
  */
 
 public class Playlist {
+    //---------------------------PROPIEDADES-------------------------
     String nombre;
     ArrayList<Cancion> canciones;
+
+    //---------------------------MÉTODOS-----------------------------
+    /****************************************************************
+     * Playlist: asigna el nombre a la playlist y le instancia 3 canciones
+     * @param nombre
+     */
     public Playlist(String nombre){
         canciones = new ArrayList<Cancion>();
         this.nombre=nombre;
@@ -35,10 +42,23 @@ public class Playlist {
             canciones.add(new Cancion("Dakiti", "Bad Bunny", "3:25"));
         }
     }
+    //***************************************************************
+
+    /****************************************************************
+     * toString(): muestra las propiedades de la playlist como un String
+     */
     public String toString(){
         return nombre;
     }
+    //***************************************************************
+
+    /****************************************************************
+     * getCancion: devuelve la cancion que indica el usuario vía índice
+     * @param index
+     * @return
+     */
     public Cancion getCancion(int index){
         return canciones.get(index);
     }
+    //***************************************************************
 }

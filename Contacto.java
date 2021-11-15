@@ -12,15 +12,26 @@
  */
 
 public class Contacto {
+    //---------------------------PROPIEDADES-------------------------
     private String nombre;
     private String numero;
 
+    //---------------------------MÉTODOS-----------------------------
+    /****************************************************************
+     * Contacto: instancia los valores de los contatos
+     * @param nombre
+     * @param numero
+     */
     public Contacto(String nombre, String numero){
         this.nombre = nombre;
         this.numero = numero;
     }
+    //****************************************************************
 
+    /*****************************************************************
+     * toString: muestra las propiedades del contacto como un String
+     */
     public String toString(){
-        return nombre + ": "  + numero;
+        return nombre + "- "  + numero;
     }
 }
