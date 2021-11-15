@@ -38,6 +38,7 @@ public class Controlador {
             int opcion = -1;
 
             boolean encendido = carro.getEncendido();
+            while(true){
             if (encendido){
                 while (opcion != 7){
                     //Despliegue de las opciones del menú y su previa lectura de dicha opción
@@ -106,6 +107,11 @@ public class Controlador {
                         String productividad = carro.productividad(cosa);
                         vista.mostrar(productividad);
                     }
+
+                    if (opcion == 7){
+                        vista.despedida();
+                        break; 
+                    }
                 }
             }
             else{
@@ -118,9 +124,11 @@ public class Controlador {
 
                     if (opcion == 2){ //Salir
                         vista.despedida();
+                        break;
                     }
                 }
             }
+        }
         } catch (Exception e){
             String s = "ERROR: " + e.getMessage();
             vista.error(s);
