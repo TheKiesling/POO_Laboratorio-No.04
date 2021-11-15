@@ -173,11 +173,11 @@ public class Vista {
             System.out.println("Opcion 3: Llamar a contacto");
             System.out.println("Opcion 4: Finalizar llamada");
             
-            if(TipoRadio==1){
+            if(TipoRadio==3){
                 System.out.println("Opcion 5: Cambiar bocinas o auriculares");
-            }else if(TipoRadio==2){
+            }else if(TipoRadio==1){
                 System.out.println("Opcion 5: Llamar al ultimo contacto");
-            }else if(TipoRadio==3){
+            }else if(TipoRadio==2){
                 System.out.println("Opcion 5: Cambiar a llamada en espera");
             }
             

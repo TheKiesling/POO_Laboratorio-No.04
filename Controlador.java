@@ -79,6 +79,7 @@ public class Controlador {
                         if (opcion == 4){ //Modo Reproduccion
                             int opcionReproduccion = vista.mostrarMenuReproduccion();
                             if (opcionReproduccion == 1){ //Seleccionar Playlist
+                                vista.mostrar(radio.getPlaylists());
                                 int lista = vista.pedirLista();
                                 carro.lista(lista);
                             }
@@ -95,7 +96,7 @@ public class Controlador {
                         if (opcion == 5){ //Modo Teléfono
                             int opcionTelefono = vista.mostrarMenuTelfono(tipo);
                             String telefono = "";
-                            if (opcionTelefono == 4){
+                            if (opcionTelefono == 3){
                                 int contacto = vista.pedirContacto();
                                 telefono = carro.llamar(contacto);
                             }
