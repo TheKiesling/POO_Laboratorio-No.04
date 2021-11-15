@@ -1,5 +1,18 @@
 import java.util.ArrayList;
 
+/**
+ * Clase Radio
+ * Encargada de simular a la radio, sus acciones, propiedades y metodos.
+ * 
+ * @version 1.0, 13/10/2021
+ * finalizacion 15/10/2021
+ * 
+ * @author 
+ * Diego E. Lemus L. - 21469
+ * José P. Kiesling L. - 21581
+ * Andrés E. Montoya W. - 21552
+ */
+
 public abstract class Radio implements Radio_basica, Modo_radio, Modo_reproduccion,Modo_telefono, Telefono_productividad{
     protected int volumen;
     protected double estacion;

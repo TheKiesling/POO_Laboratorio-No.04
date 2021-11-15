@@ -1,5 +1,18 @@
 import java.util.ArrayList;
 
+/**
+ * Clase Playlist
+ * Encargada de simular a una playlist musical, contiene Canciones.
+ * 
+ * @version 1.0, 13/10/2021
+ * finalizacion 15/10/2021
+ * 
+ * @author 
+ * Diego E. Lemus L. - 21469
+ * José P. Kiesling L. - 21581
+ * Andrés E. Montoya W. - 21552
+ */
+
 public class Playlist {
     String nombre;
     ArrayList<Cancion> canciones;
