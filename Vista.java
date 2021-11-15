@@ -244,11 +244,11 @@ public class Vista {
 
         try{
             while(verificacion == false){
-                if(tipo == 1)
+                if(tipo == 3)
                     System.out.println("Ingrese el lugar a donde quiere viajar :");
-                if (tipo == 2)
+                if (tipo == 1)
                     System.out.println("Ingrese su nombre para la tarjeta de presentacion :");
-                if (tipo == 3)
+                if (tipo == 2)
                     System.out.println("Ingrese el dia para ver el clima :");
                 cosa = scan.nextLine();
                 if(cosa.equals("")){
@@ -289,12 +289,13 @@ public class Vista {
 
     public int CambiarEmisora() throws Exception, InputMismatchException{
         int op = -1;
+        int emisora = 0;
         boolean verificacion = false;
 
         try{
             System.out.println("Ingrese la opcion de cambio de emisora:");
-            System.out.println("Opcion 1: Avanzar 0.5");
-            System.out.println("Opcion 2: Retroceder 0.5\n");
+            System.out.println("Opcion 1: Avanzar 1");
+            System.out.println("Opcion 2: Retroceder 1\n");
             
             while(verificacion == false){
                 System.out.println("->Elija una opcion ingresando el numero que la identifica (1-2)");
@@ -306,6 +307,12 @@ public class Vista {
                     }else{
                         System.out.println("% Ingrese una opcion valida (1-2) %");
                     }
+                    if (op == 1){
+                        emisora = 1;
+                    }
+                    if (op == 2){
+                        emisora = -1;
+                    }
             }
             }
             //En caso de ingreso invalido
@@ -316,7 +323,7 @@ public class Vista {
             String s = "Ocurrio un error en el ingreso de opcion "+ e.toString();
             throw new Exception(s);
         }
-        return op;
+        return emisora;
     }
 
     public int GuardarEmisora() throws Exception, InputMismatchException{
@@ -324,7 +331,7 @@ public class Vista {
         boolean verificacion = false;
 
         try{
-            System.out.println("Ingrese la emisora que desea guardar:");
+            System.out.println("Ingrese la posicion donde va a guardar la estacion:");
             
             while(verificacion == false){
                 emisora = Integer.parseInt(scan.nextLine());
